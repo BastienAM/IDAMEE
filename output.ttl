@@ -1,0 +1,25 @@
+@prefix snds: <http://www.semanticweb.org/user/ontologies/2020/9/my_ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+snds:Patient1 a snds:Sequence ;
+    snds:hasDateOfBirth "1943-02-28"^^xsd:date ;
+    snds:hasDateOfDeath "2090-02-28"^^xsd:date ;
+    snds:hasGender 1 ;
+    snds:hasLocationCode "35700"^^xsd:string ;
+    snds:isComposedOf snds:Patient0Evt1,
+        snds:Patient0Evt2 .
+
+snds:Patient2 a snds:Sequence ;
+    snds:hasDateOfBirth "1943-02-28"^^xsd:date ;
+    snds:hasDateOfDeath "2090-02-28"^^xsd:date ;
+    snds:hasGender 2 ;
+    snds:hasLocationCode "35700"^^xsd:string ;
+    snds:isComposedOf snds:Patient0Evt2,
+        snds:Patient1Evt3 .
+
+snds:Patient0Evt1 a snds:Event ;
+    snds:hasDateEnd "2020-07-28"^^xsd:date ;
+    snds:hasDateStart "2020-02-28"^^xsd:date ;
+    snds:hasExecutor snds:Pharmacy ;
+    snds:hasLabel <http://www.atc.fr/N02BE0> .
+
