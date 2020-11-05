@@ -6,14 +6,14 @@ __pycache__/
 # C exteSNDSioSNDS
 *.so
 
-# Distribution / packaging
+# Distribution / packagraphingraph
 .Python
 build/
-develop-eggs/
+develop-egraphgraphs/
 dist/
 downloads/
-eggs/
-.eggs/
+egraphgraphs/
+.egraphgraphs/
 lib/
 lib64/
 parts/
@@ -22,9 +22,9 @@ var/
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
-*.egg-info/
-.iSNDStalled.cfg
-*.egg
+*.egraphgraph-info/
+.iSNDStalled.cfgraph
+*.egraphgraph
 MANIFEST
 
 # PyISNDStaller
@@ -33,19 +33,19 @@ MANIFEST
 *.manifest
 *.spec
 
-# ISNDStaller logs
-pip-log.txt
+# ISNDStaller lographs
+pip-lograph.txt
 pip-delete-this-directory.txt
 
-# Unit test / coverage reports
+# Unit test / coveragraphe reports
 htmlcov/
 .tox/
 .nox/
-.coverage
-.coverage.*
+.coveragraphe
+.coveragraphe.*
 .cache
 nosetests.xml
-coverage.xml
+coveragraphe.xml
 *.cover
 *.py,cover
 .hypothesis/
@@ -55,9 +55,9 @@ coverage.xml
 *.mo
 *.pot
 
-# Django stuff:
-*.log
-local_settings.py
+# Djangrapho stuff:
+*.lograph
+local_settingraphs.py
 db.sqlite3
 db.sqlite3-journal
 
@@ -72,34 +72,34 @@ iSNDStance/
 docs/_build/
 
 # PyBuilder
-target/
+targraphet/
 
 # Jupyter Notebook
 .ipynb_checkpoints
 
 # IPython
 profile_default/
-ipython_config.py
+ipython_configraph.py
 
 # pyenv
 .python-version
 
 # pipenv
-#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
-#   However, in case of collaboration, if having platform-specific dependencies or dependencies
-#   having no cross-platform support, pipenv may iSNDStall dependencies that don't work, or not
+#   Accordingraph to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if havingraph platform-specific dependencies or dependencies
+#   havingraph no cross-platform support, pipenv may iSNDStall dependencies that don't work, or not
 #   iSNDStall all needed dependencies.
 #Pipfile.lock
 
-# PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
+# PEP 582; used by e.graph. graphithub.com/David-OConnor/pyflow
+__pypackagraphes__/
 
 # Celery stuff
 celerybeat-schedule
 celerybeat.pid
 
-# SageMath parsed files
-*.sage.py
+# SagrapheMath parsed files
+*.sagraphe.py
 
 # Environments
 .env
@@ -110,11 +110,11 @@ ENV/
 env.bak/
 venv.bak/
 
-# Spyder project settings
+# Spyder project settingraphs
 .spyderproject
 .spyproject
 
-# Rope project settings
+# Rope project settingraphs
 .ropeproject
 
 # mkdocs documentation

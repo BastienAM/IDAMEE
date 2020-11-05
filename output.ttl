@@ -1,25 +1,76 @@
-@prefix snds: <http://www.semanticweb.org/user/ontologies/2020/9/my_ontology#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-snds:Patient1 a snds:Sequence ;
-    snds:hasDateOfBirth "1943-02-28"^^xsd:date ;
-    snds:hasDateOfDeath "2090-02-28"^^xsd:date ;
-    snds:hasGender 1 ;
-    snds:hasLocationCode "35700"^^xsd:string ;
-    snds:isComposedOf snds:Patient0Evt1,
-        snds:Patient0Evt2 .
-
-snds:Patient2 a snds:Sequence ;
-    snds:hasDateOfBirth "1943-02-28"^^xsd:date ;
-    snds:hasDateOfDeath "2090-02-28"^^xsd:date ;
-    snds:hasGender 2 ;
-    snds:hasLocationCode "35700"^^xsd:string ;
-    snds:isComposedOf snds:Patient0Evt2,
-        snds:Patient1Evt3 .
-
-snds:Patient0Evt1 a snds:Event ;
-    snds:hasDateEnd "2020-07-28"^^xsd:date ;
-    snds:hasDateStart "2020-02-28"^^xsd:date ;
-    snds:hasExecutor snds:Pharmacy ;
-    snds:hasLabel <http://www.atc.fr/N02BE0> .
-
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:snds="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#"
+>
+  <rdf:Description rdf:about="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient1Evt3">
+    <snds:hasLabel rdf:resource="http://www.UNCAM.fr/UNCAM#UNCAM00600"/>
+    <snds:hasDateEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-05-28</snds:hasDateEnd>
+    <snds:hasDateStart rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2010-01-28</snds:hasDateStart>
+    <snds:hasType rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Consultation"/>
+    <snds:hasExecutor rdf:resource="http://www.doctor.fr/doctor#501100450"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient0Evt1">
+    <snds:hasDateEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-07-28</snds:hasDateEnd>
+    <snds:hasExecutor rdf:resource="http://www.hospital.fr/hospital#22100450"/>
+    <rdf:type rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Event"/>
+    <snds:hasDateStart rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-02-28</snds:hasDateStart>
+    <snds:hasType rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#DrugDelivery"/>
+    <snds:hasLabel rdf:resource="http://www.atc.fr/ATC#N02BE0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient2">
+    <snds:hasDateOfDeath rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2090-02-28</snds:hasDateOfDeath>
+    <snds:isComposedOf rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient1Evt6"/>
+    <snds:hasDateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1943-02-28</snds:hasDateOfBirth>
+    <snds:isComposedOf rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient1Evt5"/>
+    <snds:isComposedOf rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient1Evt3"/>
+    <rdf:type rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Sequence"/>
+    <snds:hasGender rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</snds:hasGender>
+    <snds:isComposedOf rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient1Evt4"/>
+    <snds:hasLocationCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">35700</snds:hasLocationCode>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient1">
+    <snds:hasDateOfDeath rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2090-02-28</snds:hasDateOfDeath>
+    <snds:hasGender rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</snds:hasGender>
+    <snds:hasDateOfBirth rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1943-02-28</snds:hasDateOfBirth>
+    <snds:isComposedOf rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient0Evt1"/>
+    <snds:hasLocationCode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">35700</snds:hasLocationCode>
+    <snds:isComposedOf rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient0Evt2"/>
+    <rdf:type rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Sequence"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.doctor.fr/doctor#22100450">
+    <snds:hasSpeciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cancerologie</snds:hasSpeciality>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient1Evt5">
+    <snds:hasType rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Hospitalization"/>
+    <snds:hasDateStart rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-28</snds:hasDateStart>
+    <snds:hasLabel rdf:resource="http://www.IRNAT.fr/IrNat#IRNAT52600"/>
+    <snds:hasExecutor rdf:resource="http://www.hospital.fr/hospital#501100450"/>
+    <snds:hasDateEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-12-28</snds:hasDateEnd>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient0Evt2">
+    <snds:hasLabel rdf:resource="http://www.CCAM.fr/CCAM#YYYY600"/>
+    <snds:hasDateEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-05-28</snds:hasDateEnd>
+    <snds:hasType rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Hospitalization"/>
+    <snds:hasDateStart rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-28</snds:hasDateStart>
+    <rdf:type rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Event"/>
+    <snds:hasExecutor rdf:resource="http://www.hospital.fr/hospital#22100450"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient1Evt6">
+    <snds:hasExecutor rdf:resource="http://www.doctor.fr/doctor#22100450"/>
+    <snds:hasDateStart rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2018-01-28</snds:hasDateStart>
+    <snds:hasLabel rdf:resource="http://www.CIM10.fr/CIM10#CIM102600"/>
+    <snds:hasType rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Acte"/>
+    <snds:hasDateEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-05-28</snds:hasDateEnd>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#Patient1Evt4">
+    <snds:hasDateStart rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-28</snds:hasDateStart>
+    <snds:hasDateEnd rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-05-28</snds:hasDateEnd>
+    <snds:hasType rdf:resource="http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#ALD"/>
+    <snds:hasLabel rdf:resource="http://www.ALDCODE.fr/ALDCode#ALD0152600"/>
+    <snds:hasExecutor rdf:resource="http://www.doctor.fr/doctor#22100450"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.doctor.fr/doctor#501100450">
+    <snds:hasSpeciality rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ophtalmologie</snds:hasSpeciality>
+  </rdf:Description>
+</rdf:RDF>
