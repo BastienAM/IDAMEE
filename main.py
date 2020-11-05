@@ -143,5 +143,5 @@ print(graph.serialize(format='ttl').decode("utf-8"))
 
 
 ## Saving the created graph into the file with turtle format
-graph.serialize(destination='output.ttl', format='xml')
+graph.serialize(destination='output.ttl', format='turtle')
 
