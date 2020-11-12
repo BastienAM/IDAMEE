@@ -30,9 +30,9 @@ class Hospitalisation(EventType):
 class Sequence:
     def __init__(self, dateofBirth,dateofDeath,gender,localisation):
         self.dateofBirth = dateofBirth
-        slef.dateofDeath=dateofDeath
+        self.dateofDeath=dateofDeath
         self.gender=gender
-        slef.localisation=localisation
+        self.localisation=localisation
 
 
 class Consultation(EventType):
