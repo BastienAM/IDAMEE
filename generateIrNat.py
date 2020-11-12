@@ -2,14 +2,19 @@ import os,sys
 import sqlite3
 import sqlalchemy as sa
 import rdflib as rdf
+import argparse
 
 from rdflib import Graph, Literal, RDF
 from rdflib.namespace import XSD, SKOS, OWL
 
-nameFile= "snds_2235.db"
+#Création argument
+parser = argparse.ArgumentParser()
+parser.add_argument("-db", "--database", dest="file_db", help="file SQlite", required=True)
+parser.add_argument("-o", "--output", dest="file_output", help="name output file", default="export")
+args = parser.parse_args()
 
-engine = sa.create_engine("sqlite:///"+os.path.join(os.getcwd(),nameFile))
-
+#connection base de donnée
+engine = sa.create_engine("sqlite:///"+os.path.join(os.getcwd(),args.file_db))
 connection = engine.connect()
 metadata = sa.MetaData()
 IR_NAT_V = sa.Table('IR_NAT_V', metadata, autoload=True, autoload_with=engine)
@@ -42,4 +47,4 @@ while True:
 ResultProxy.close()
 
 #Export fichier RDF en .ttl
-graph.serialize(destination="export.ttl", format="turtle")
+graph.serialize(destination=args.file_output+".ttl", format="turtle")
