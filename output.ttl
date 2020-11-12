@@ -2,10 +2,10 @@
 @prefix atc: <http://www.atc.fr/ATC#> .
 @prefix ccam: <http://www.CCAM.fr/CCAM#> .
 @prefix cim10: <http://www.CIM10.fr/CIM10#> .
-@prefix doctor: <http://www.doctor.fr/doctor#> .
-@prefix hosp: <http://www.hospital.fr/hospital#> .
+@prefix doctor: <http://www.localhost.fr/doctor#> .
+@prefix hosp: <http://www.localhost.org/hospital#> .
 @prefix irnat: <http://www.IRNAT.fr/IrNat#> .
-@prefix snds: <http://www.semanticweb.orgraph/user/ontolographies/2020/9/my_ontology#> .
+@prefix snds: <http://www.localhost.org/> .
 @prefix uncam: <http://www.UNCAM.fr/UNCAM#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
