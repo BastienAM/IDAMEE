@@ -1,0 +1,71 @@
+@prefix ald: <http://www.ALDCODE.fr/ALDCode#> .
+@prefix atc: <http://www.atc.fr/ATC#> .
+@prefix ccam: <http://www.CCAM.fr/CCAM#> .
+@prefix cim10: <http://www.CIM10.fr/CIM10#> .
+@prefix doctor: <http://www.localhost.fr/doctor#> .
+@prefix hosp: <http://www.localhost.org/hospital#> .
+@prefix irnat: <http://www.IRNAT.fr/IrNat#> .
+@prefix snds: <http://www.localhost.org/> .
+@prefix uncam: <http://www.UNCAM.fr/UNCAM#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+snds:Patient1 a snds:Sequence ;
+    snds:hasDateOfBirth "1943-02-28"^^xsd:date ;
+    snds:hasDateOfDeath "2090-02-28"^^xsd:date ;
+    snds:hasGender 1 ;
+    snds:hasLocationCode "35700"^^xsd:string ;
+    snds:isComposedOf snds:Patient0Evt1,
+        snds:Patient0Evt2 .
+
+snds:Patient2 a snds:Sequence ;
+    snds:hasDateOfBirth "1943-02-28"^^xsd:date ;
+    snds:hasDateOfDeath "2090-02-28"^^xsd:date ;
+    snds:hasGender 2 ;
+    snds:hasLocationCode "35700"^^xsd:string ;
+    snds:isComposedOf snds:Patient1Evt3,
+        snds:Patient1Evt4,
+        snds:Patient1Evt5,
+        snds:Patient1Evt6 .
+
+doctor:501100450 snds:hasSpeciality "Ophtalmologie"^^xsd:string .
+
+snds:Patient0Evt1 a snds:Event ;
+    snds:hasDateEnd "2020-07-28"^^xsd:date ;
+    snds:hasDateStart "2020-02-28"^^xsd:date ;
+    snds:hasExecutor hosp:22100450 ;
+    snds:hasLabel atc:N02BE0 ;
+    snds:hasType snds:DrugDelivery .
+
+snds:Patient0Evt2 a snds:Event ;
+    snds:hasDateEnd "2020-05-28"^^xsd:date ;
+    snds:hasDateStart "2020-01-28"^^xsd:date ;
+    snds:hasExecutor hosp:22100450 ;
+    snds:hasLabel ccam:YYYY600 ;
+    snds:hasType snds:Hospitalization .
+
+snds:Patient1Evt3 snds:hasDateEnd "2010-05-28"^^xsd:date ;
+    snds:hasDateStart "2010-01-28"^^xsd:date ;
+    snds:hasExecutor doctor:501100450 ;
+    snds:hasLabel uncam:UNCAM00600 ;
+    snds:hasType snds:Consultation .
+
+snds:Patient1Evt4 snds:hasDateEnd "2020-05-28"^^xsd:date ;
+    snds:hasDateStart "2020-01-28"^^xsd:date ;
+    snds:hasExecutor doctor:22100450 ;
+    snds:hasLabel ald:ALD0152600 ;
+    snds:hasType snds:ALD .
+
+snds:Patient1Evt5 snds:hasDateEnd "2020-12-28"^^xsd:date ;
+    snds:hasDateStart "2020-11-28"^^xsd:date ;
+    snds:hasExecutor hosp:501100450 ;
+    snds:hasLabel irnat:IRNAT52600 ;
+    snds:hasType snds:Hospitalization .
+
+snds:Patient1Evt6 snds:hasDateEnd "2019-05-28"^^xsd:date ;
+    snds:hasDateStart "2018-01-28"^^xsd:date ;
+    snds:hasExecutor doctor:22100450 ;
+    snds:hasLabel cim10:CIM102600 ;
+    snds:hasType snds:Acte .
+
+doctor:22100450 snds:hasSpeciality "Cancerologie"^^xsd:string .
+
