@@ -8,4 +8,4 @@ you need to install the following libraries with the command `pip install xxx`
 
 ## Run generateIrNat
 For run the script, you must enter the name of the database file.
-Example : `python generateIrNat -db "snds_2235.db"`
+Example : `python generateIrNat.py -db "snds_2235.db"`
