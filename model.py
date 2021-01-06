@@ -66,15 +66,6 @@ class Doctor(Executer):
         self.speciality = speciality
 
 class Sequence:
-    def __init__(self, refSequence, gender, dateofBirth, dateofDeath, localisation, events):
-        self.refSequence = refSequence
-        self.gender = gender
-        self.dateofBirth = dateofBirth
-        self.dateofDeath = dateofDeath
-        self.localisation = localisation
-        self.events = events
-
-class Sequencedtd:
     def __init__(self, refSequence, gender, dateofBirth, dateofDeath, localisation):
         self.refSequence = refSequence
         self.gender = gender
