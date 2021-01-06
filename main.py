@@ -41,10 +41,17 @@ event_acte = SNDS['Acte']
 event_consultation= SNDS['Consultation']
 ## lOADING THE DATA IN THE STRUCTURE
 events1 = []
+
+#OK
 events1.append(model.Event(model.Doctor('DO12050','SP0102'),model.Consultation('CONS100254'),'2020-02-15','2020-05-12'))
+
 events1.append(model.Event(model.Doctor('DO12050','SP0102'),model.Acte('AC150254'),'2020-02-15','2020-05-12'))
+
+#OK
 events1.append(model.Event(model.Pharmacy('PH14250'),model.DrugDelevery('DD50254',10),'2020-02-15','2020-05-12'))
+
 events1.append(model.Event(model.Hospital('HO12050'),model.Hospitalisation('AC150254','DIAG15200'),'2020-02-15','2020-05-12'))
+#OK
 sequence1 = model.Sequence('PAT125012','1943-01-12','2090-01-12',2,'35700',events1)
 events2 = []
 events2.append(model.Event(model.Doctor('DO12015','SP0111'),model.ALD('CONS100254'),'2020-02-15','2020-05-12'))
@@ -55,6 +62,20 @@ sequence2 = model.Sequence('PAT125000','1950-01-02','2090-01-15',1,'9200',events
 sdns_array = []
 sdns_array.append(sequence1)
 sdns_array.append(sequence2)
+#######################################SEQUENCE#############################################################################
+import sqlite3
+import model
+#import pandas as pd
+
+conn = sqlite3.connect("../snds_2235.db")
+cursor = conn.cursor()
+cursor.execute("select BEN_NIR_PSA, BEN_SEX_COD, BEN_NAI_MOI, BEN_DCD_DTE, BEN_RES_COM, BEN_RES_DPT from IR_BEN_R;")
+results = cursor.fetchall()
+sequence_list = []
+for r in results:
+    sequence_list.append(model.Sequencedtd(r[0],r[1],r[2],r[3],r[4]))
+
+print("Ok")
 ############################################################################################################################
 
 ## CREATING THE RDF FILE
@@ -122,6 +143,5 @@ graph1.bind("doctor", DOCTOR)
 print("--- print all the data in the xml format ---")
 print(graph1.serialize(format='ttl').decode("utf-8"))
 
-
 ## Saving the created graph into the file with turtle format
-graph1.serialize(destination='output3.ttl', format='turtle')
+graph1.serialize(destination='output.ttl', format='turtle')

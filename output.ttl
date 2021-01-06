@@ -5,67 +5,92 @@
 @prefix doctor: <http://www.localhost.fr/doctor#> .
 @prefix hosp: <http://www.localhost.org/hospital#> .
 @prefix irnat: <http://www.IRNAT.fr/IrNat#> .
+@prefix pharm: <http://www.localhost.fr/pharmacy#> .
 @prefix snds: <http://www.localhost.org/> .
 @prefix uncam: <http://www.UNCAM.fr/UNCAM#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> . 
 
-snds:Patient1 a snds:Sequence ;
-    snds:hasDateOfBirth "1943-02-28"^^xsd:date ;
-    snds:hasDateOfDeath "2090-02-28"^^xsd:date ;
+cim10:AC150254 snds:diagnosis "DIAG15200" .
+
+atc:DD50254 snds:quantity 10 .
+
+snds:PAT125000 a snds:PAT125000 ;
+    snds:hasDateOfBirth "1950-01-02"^^xsd:date ;
+    snds:hasDateOfDeath "2090-01-15"^^xsd:date ;
     snds:hasGender 1 ;
-    snds:hasLocationCode "35700"^^xsd:string ;
-    snds:isComposedOf snds:Patient0Evt1,
-        snds:Patient0Evt2 .
+    snds:hasLocationCode "9200"^^xsd:string ;
+    snds:isComposedOf snds:PAT125000evt1,
+        snds:PAT125000evt2,
+        snds:PAT125000evt3,
+        snds:PAT125000evt4 .
 
-snds:Patient2 a snds:Sequence ;
-    snds:hasDateOfBirth "1943-02-28"^^xsd:date ;
-    snds:hasDateOfDeath "2090-02-28"^^xsd:date ;
-    snds:hasGender 2 ;
-    snds:hasLocationCode "35700"^^xsd:string ;
-    snds:isComposedOf snds:Patient1Evt3,
-        snds:Patient1Evt4,
-        snds:Patient1Evt5,
-        snds:Patient1Evt6 .
-
-doctor:501100450 snds:hasSpeciality "Ophtalmologie"^^xsd:string .
-
-snds:Patient0Evt1 a snds:Event ;
-    snds:hasDateEnd "2020-07-28"^^xsd:date ;
-    snds:hasDateStart "2020-02-28"^^xsd:date ;
-    snds:hasExecutor hosp:22100450 ;
-    snds:hasLabel atc:N02BE0 ;
+snds:PAT125000evt1 a snds:Event ;
+    snds:hasDateEnd "2020-05-12"^^xsd:date ;
+    snds:hasDateStart "2020-02-15"^^xsd:date ;
+    snds:hasExecutor doctor:DO12015 ;
+    snds:hasLabel ald:CONS100254 ;
     snds:hasType snds:DrugDelivery .
 
-snds:Patient0Evt2 a snds:Event ;
-    snds:hasDateEnd "2020-05-28"^^xsd:date ;
-    snds:hasDateStart "2020-01-28"^^xsd:date ;
-    snds:hasExecutor hosp:22100450 ;
-    snds:hasLabel ccam:YYYY600 ;
-    snds:hasType snds:Hospitalization .
+snds:PAT125000evt2 a snds:Event ;
+    snds:hasDateEnd "2020-05-12"^^xsd:date ;
+    snds:hasDateStart "2021-02-15"^^xsd:date ;
+    snds:hasExecutor hosp:HOS12015 ;
+    snds:hasLabel uncam:BIO150254 ;
+    snds:hasType snds:Biology .
 
-snds:Patient1Evt3 snds:hasDateEnd "2010-05-28"^^xsd:date ;
-    snds:hasDateStart "2010-01-28"^^xsd:date ;
-    snds:hasExecutor doctor:501100450 ;
-    snds:hasLabel uncam:UNCAM00600 ;
+snds:PAT125000evt3 a snds:Event ;
+    snds:hasDateEnd "2020-05-12"^^xsd:date ;
+    snds:hasDateStart "2020-02-15"^^xsd:date ;
+    snds:hasExecutor doctor:DO12015 ;
+    snds:hasLabel irnat:CONS254 ;
     snds:hasType snds:Consultation .
 
-snds:Patient1Evt4 snds:hasDateEnd "2020-05-28"^^xsd:date ;
-    snds:hasDateStart "2020-01-28"^^xsd:date ;
-    snds:hasExecutor doctor:22100450 ;
-    snds:hasLabel ald:ALD0152600 ;
-    snds:hasType snds:ALD .
-
-snds:Patient1Evt5 snds:hasDateEnd "2020-12-28"^^xsd:date ;
-    snds:hasDateStart "2020-11-28"^^xsd:date ;
-    snds:hasExecutor hosp:501100450 ;
-    snds:hasLabel irnat:IRNAT52600 ;
-    snds:hasType snds:Hospitalization .
-
-snds:Patient1Evt6 snds:hasDateEnd "2019-05-28"^^xsd:date ;
-    snds:hasDateStart "2018-01-28"^^xsd:date ;
-    snds:hasExecutor doctor:22100450 ;
-    snds:hasLabel cim10:CIM102600 ;
+snds:PAT125000evt4 a snds:Event ;
+    snds:hasDateEnd "2021-05-12"^^xsd:date ;
+    snds:hasDateStart "2021-12-12"^^xsd:date ;
+    snds:hasExecutor hosp:HOS12015 ;
+    snds:hasLabel ccam:AC15515 ;
     snds:hasType snds:Acte .
 
-doctor:22100450 snds:hasSpeciality "Cancerologie"^^xsd:string .
+snds:PAT125012 a snds:PAT125012 ;
+    snds:hasDateOfBirth "1943-01-12"^^xsd:date ;
+    snds:hasDateOfDeath "2090-01-12"^^xsd:date ;
+    snds:hasGender 2 ;
+    snds:hasLocationCode "35700"^^xsd:string ;
+    snds:isComposedOf snds:PAT125012evt1,
+        snds:PAT125012evt2,
+        snds:PAT125012evt3,
+        snds:PAT125012evt4 .
+
+snds:PAT125012evt1 a snds:Event ;
+    snds:hasDateEnd "2020-05-12"^^xsd:date ;
+    snds:hasDateStart "2020-02-15"^^xsd:date ;
+    snds:hasExecutor doctor:DO12050 ;
+    snds:hasLabel irnat:CONS100254 ;
+    snds:hasType snds:Consultation .
+
+snds:PAT125012evt2 a snds:Event ;
+    snds:hasDateEnd "2020-05-12"^^xsd:date ;
+    snds:hasDateStart "2020-02-15"^^xsd:date ;
+    snds:hasExecutor doctor:DO12050 ;
+    snds:hasLabel ccam:AC150254 ;
+    snds:hasType snds:Acte .
+
+snds:PAT125012evt3 a snds:Event ;
+    snds:hasDateEnd "2020-05-12"^^xsd:date ;
+    snds:hasDateStart "2020-02-15"^^xsd:date ;
+    snds:hasExecutor pharm:PH14250 ;
+    snds:hasLabel atc:DD50254 ;
+    snds:hasType snds:DrugDelivery .
+
+snds:PAT125012evt4 a snds:Event ;
+    snds:hasDateEnd "2020-05-12"^^xsd:date ;
+    snds:hasDateStart "2020-02-15"^^xsd:date ;
+    snds:hasExecutor hosp:HO12050 ;
+    snds:hasLabel cim10:AC150254 ;
+    snds:hasType snds:Hospitalization .
+
+doctor:DO12015 snds:hasSpeciality "SP0111"^^xsd:string .
+
+doctor:DO12050 snds:hasSpeciality "SP0102"^^xsd:string .
 

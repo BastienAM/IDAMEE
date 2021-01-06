@@ -3,7 +3,8 @@ class EventType:
         self.label = label
 
 class Event:
-    def __init__(self, executer, evenType, dateStart, dateEnd):
+    def __init__(self, refPatient, executer, evenType, dateStart, dateEnd):
+        self.refPatient = refPatient
         self.dateStart = dateStart
         self.dateEnd = dateEnd
         self.executer = executer
@@ -38,7 +39,7 @@ class DrugDelevery(EventType):
         super().__init__('DrugDelevery')
         self.label = label
         self.quantity = quantity
-        
+
 class Acte(EventType):
     def __init__(self,label):
         super().__init__('Acte')
@@ -64,13 +65,19 @@ class Doctor(Executer):
         self.label = label
         self.speciality = speciality
 
-
 class Sequence:
-    def __init__(self, refSequence, dateofBirth,dateofDeath,gender, localisation, events):
+    def __init__(self, refSequence, gender, dateofBirth, dateofDeath, localisation, events):
         self.refSequence = refSequence
+        self.gender = gender
         self.dateofBirth = dateofBirth
-        self.dateofDeath=dateofDeath
-        self.gender=gender
-        self.localisation=localisation
+        self.dateofDeath = dateofDeath
+        self.localisation = localisation
         self.events = events
 
+class Sequencedtd:
+    def __init__(self, refSequence, gender, dateofBirth, dateofDeath, localisation):
+        self.refSequence = refSequence
+        self.gender = gender
+        self.dateofBirth = dateofBirth
+        self.dateofDeath = dateofDeath
+        self.localisation = localisation
