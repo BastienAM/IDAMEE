@@ -186,8 +186,8 @@ graph1.bind("cim10", CIM10)
 graph1.bind("ald",ALDCODE)
 graph1.bind("uncam",UNCAM)
 graph1.bind("irnat",IRNAT)
-graph1.bind("hosp", HOSPITAL)
-graph1.bind("pharm", PHARMACY)
+graph1.bind("hospital", HOSPITAL)
+graph1.bind("pharmacy", PHARMACY)
 graph1.bind("doctor", DOCTOR)
 
 ###################################### Saving the created graph into the file with turtle format #######################
