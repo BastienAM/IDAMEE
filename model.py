@@ -73,4 +73,3 @@ class Sequence:
         self.gender=gender
         self.localisation=localisation
         self.events = events
-
