@@ -133,3 +133,6 @@ dmypy.json
 
 # Delete TmpGraph
 Tmp/Graph
+
+# Delete output file
+output.ttl
