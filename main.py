@@ -106,7 +106,8 @@ conn.close()
 ################################################ END OF DATA EXTRACTION ################################################
 
 ########################################### CREATING THE RDF FILE ######################################################
-graph1 = Graph()
+graph1 = Graph(store='Sleepycat')
+graph1.opent('/TmpGraph', create = true)
 #################################################### SEQUENCE ##########################################################
 for seq in sequence_list:
     patient = SNDS[seq.refSequence]
@@ -191,4 +192,6 @@ graph1.bind("pharmacy", PHARMACY)
 graph1.bind("doctor", DOCTOR)
 
 ###################################### Saving the created graph into the file with turtle format #######################
+graph1.close()
+graph1.opent('/TmpGraph', create = true)
 graph1.serialize(destination='output.ttl', format='turtle')
