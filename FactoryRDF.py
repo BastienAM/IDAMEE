@@ -12,15 +12,15 @@ class FactoryRDF:
 
     #creating/prefix a namespace
     SNDS = Namespace("http://www.localhost.org/")
-    CCAM = Namespace('http://www.CCAM.fr/CCAM#')
-    ALDCODE = Namespace('http://www.ALDCODE.fr/ALDCode#')
-    ATC = Namespace('http://www.atc.fr/ATC#')
-    UNCAM = Namespace('http://www.UNCAM.fr/UNCAM#')
-    CIM10 = Namespace('http://www.CIM10.fr/CIM10#')
-    IRNAT = Namespace('http://www.IRNAT.fr/IrNat#')
+    CCAM = Namespace('http://chu-rouen.fr/cismef/CCAM#')
+    ALDCODE = Namespace('http://chu-rouen.fr/cismef/ALD#')
+    ATC = Namespace('http://chu-rouen.fr/cismef/ATC#')
+    UNCAM = Namespace('http://chu-rouen.fr/cismef/NABM#')
+    CIM10 = Namespace('http://chu-rouen.fr/cismef/CIM-10#')
+    IRNAT = Namespace('http://www.localhost.org/IrNat#')
     HOSPITAL =Namespace('http://www.localhost.org/hospital#')
-    DOCTOR = Namespace('http://www.localhost.fr/doctor#')
-    PHARMACY = Namespace('http://www.localhost.fr/pharmacy#')
+    DOCTOR = Namespace('http://www.localhost.org/doctor#')
+    PHARMACY = Namespace('http://www.localhost.org/pharmacy#')
 
     ## Definition of the object properties for Patient
     patient = SNDS['Sequence']
