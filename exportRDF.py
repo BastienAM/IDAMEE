@@ -50,6 +50,19 @@ for row in records:
 cursor.close()
 #endregion
 
+#region Hospitalization
+#query = open('./SQL/hospitalization.sql', 'r').read()
+#cursor = conn.cursor()
+#cursor.execute(query)
+
+#records = cursor.fetchall()
+
+#for row in records:
+#    factory.addEventHospitalisation(model.Event(str(row[0]), model.Hospital(str(row[5])), model.Hospitalisation(row[4], row[3]), row[1], row[2]))
+#
+#cursor.close()
+#endregion
+
 # On ferme la connexion à la base de donnée
 conn.close()
 

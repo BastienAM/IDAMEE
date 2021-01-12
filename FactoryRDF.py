@@ -148,7 +148,7 @@ class FactoryRDF:
         self.__addEvent(evt, patient, event_i)
         
         self.graph.add((event_i, self.has_type, self.event_hospitalisation))
-        self.graph.add((event_i, self.hasLabel, self.CIM10[evt.evenType.label]))
+        self.graph.add((event_i, self.hasLabel, self.CCAM[evt.evenType.label]))
         self.graph.add((self.CIM10[evt.evenType.label], self.SNDS['diagnosis'], Literal(evt.evenType.diagnosis)))
 
         self.graph.add((event_i, self.executor, self.HOSPITAL[evt.executer.label]))
