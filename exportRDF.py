@@ -89,6 +89,19 @@ cursor.close()
 #cursor.close()
 #endregion
 
+#region Consultation
+query = open('./SQL/consultation.sql', 'r').read()
+cursor = conn.cursor()
+cursor.execute(query)
+
+records = cursor.fetchall()
+
+for row in records:
+    factory.addEventConsultation(model.Event(str(row[0]), model.Doctor(str(row[4]), str(row[5])), model.Consultation(str(row[3])), row[1], row[2]))
+
+cursor.close()
+#endregion
+
 # On ferme la connexion à la base de donnée
 conn.close()
 
