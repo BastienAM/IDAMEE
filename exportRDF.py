@@ -63,6 +63,19 @@ cursor.close()
 #cursor.close()
 #endregion
 
+#region ALD
+#query = open('./SQL/ALD.sql', 'r').read()
+#cursor = conn.cursor()
+#cursor.execute(query)
+
+#records = cursor.fetchall()
+
+#for row in records:
+#    factory.addEventALD(model.Event(str(row[0]), None, model.ALD(str(row[1])), None, None))
+#
+#cursor.close()
+#endregion
+
 # On ferme la connexion à la base de donnée
 conn.close()
 
