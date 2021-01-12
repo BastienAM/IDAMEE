@@ -130,3 +130,9 @@ dmypy.json
 
 # Delete config IDE
 .idea/
+
+# Delete TmpGraph
+Tmp/Graph
+
+# Delete output file
+output.ttl
