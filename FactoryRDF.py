@@ -1,12 +1,8 @@
-import sqlite3
 import model
 import os
 
-from rdflib import Graph, ConjunctiveGraph, Literal, RDF, URIRef, OWL, Namespace
-
-# rdflib knows about some namespaces, like FOAF
+from rdflib import Graph, Literal, RDF, Namespace
 from rdflib.namespace import FOAF , XSD
-import pprint, model
 
 class FactoryRDF:
 
