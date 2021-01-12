@@ -1,5 +1,6 @@
 import sqlite3
 import model
+import os
 
 from rdflib import Graph, ConjunctiveGraph, Literal, RDF, URIRef, OWL, Namespace
 
@@ -181,4 +182,6 @@ class FactoryRDF:
         #self.graph.add((patient, self.date_of_death, Literal(sequence.dateofDeath, datatype = XSD['date'])))
 
     def deleteTempFiles(self):
-        pass
+        for f in os.listdir(self.name):
+            os.unlink(self.name + "/" + f)
+        os.rmdir(self.name)
