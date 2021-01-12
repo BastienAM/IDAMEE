@@ -67,9 +67,9 @@ class Doctor(Executer):
 
 
 class Sequence:
-    def __init__(self, refSequence, dateofBirth,dateofDeath,gender, localisation):
+    def __init__(self, refSequence, dateofBirth, dateofDeath, gender, localisation):
         self.refSequence = refSequence
         self.dateofBirth = dateofBirth
-        self.dateofDeath=dateofDeath
-        self.gender=gender
-        self.localisation=localisation
+        self.dateofDeath = dateofDeath
+        self.gender = gender
+        self.localisation = localisation

@@ -10,7 +10,6 @@ conn = sqlite3.connect("../database/snds_2235.db")
 factory = FactoryRDF.FactoryRDF()
 factory.open(True)
 
-
 #region Sequence
 query = open('./SQL/sequence.sql', 'r').read()
 cursor = conn.cursor()
@@ -19,7 +18,7 @@ cursor.execute(query)
 records = cursor.fetchall()
 
 for row in records:
-    factory.addSequence(model.Sequence(row[0], row[2], None, row[1], row[3]))
+    factory.addSequence(model.Sequence(row[0], row[2], row[3], row[1], row[4]))
 
 cursor.close()
 #endregion
