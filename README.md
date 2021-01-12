@@ -8,11 +8,12 @@ you need to install the following libraries with the command `pip install xxx` :
 * bsddb3 ([help for windows user](https://stackoverflow.com/questions/33714698/installing-bsddb3-6-1-1-in-windows-filenotfounderror-db-include-db-h))
 
 ## Run generateIrNat
-For run the script, you must enter the name of the database file.  
+For run the script, you must enter the name of the database file on argument.  
 Example : `python generateIrNat.py -db "snds_2235.db"`
 
-## Run main
-`python main.py`
+## Create RDF file from database
+You need do run the script `exportRDF.py` with the name of the database file on argument.  
+Example : `python exportRDF.py -db "snds_2235.db"`
 
 ## Convert .ttl file to TDB for Fuseki
 

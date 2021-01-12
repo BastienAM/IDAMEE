@@ -1,10 +1,14 @@
 import sqlite3
 import model
-import pprint
 import FactoryRDF
+import argparse
 
+#Création argument
+parser = argparse.ArgumentParser()
+parser.add_argument("-db", "--database", dest="file_db", help="file SQlite", required=True)
+args = parser.parse_args()
 
-conn = sqlite3.connect("../database/snds_2235.db")
+conn = sqlite3.connect(args.file_db)
 
 # Création de la fabrique
 factory = FactoryRDF.FactoryRDF()
