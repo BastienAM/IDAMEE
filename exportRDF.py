@@ -32,13 +32,16 @@ cursor.execute(query)
 records = cursor.fetchall()
 
 for row in records:
-    factory.addSequence(model.Event(str(row[0]), model.Pharmacy(str(row[5])), model.DrugDelevery(str(row[3]), row[4]), row[1], row[2]))
+    factory.addEventDrugDelivery(model.Event(str(row[0]), model.Pharmacy(str(row[5])), model.DrugDelevery(str(row[3]), row[4]), row[1], row[2]))
 
 cursor.close()
 #endregion
 
 # On ferme la connexion à la base de donnée
 conn.close()
+
+# Ajout des namespaces
+factory.bind()
 
 # Export du fichier
 factory.export()
