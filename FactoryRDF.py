@@ -166,7 +166,8 @@ class FactoryRDF:
         self.graph.add((event_i, self.has_type, self.event_biology))
         self.graph.add((event_i, self.hasLabel, self.UNCAM[evt.evenType.label]))
 
-        # Executant ?
+        self.graph.add((event_i, self.executor, self.DOCTOR[evt.executer.label]))
+        self.graph.add((self.DOCTOR[evt.executer.label], self.SNDS['hasSpeciality'], Literal(evt.executer.speciality, datatype=XSD['string'])))
 
         self.indexEvent = self.indexEvent + 1
 
