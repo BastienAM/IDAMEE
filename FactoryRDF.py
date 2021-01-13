@@ -29,7 +29,6 @@ class FactoryRDF:
 
     ## Definition of the object properties for Event
     event = SNDS['Event']
-    has_type = SNDS['hasType']
     date_start = SNDS['hasDateStart']
     date_end = SNDS['hasDateEnd']
     executor = SNDS['hasExecutor']
@@ -83,7 +82,7 @@ class FactoryRDF:
         event_i = patient + "EVT" + str(self.indexEvent)
         self.__addEvent(evt, patient, event_i)
         
-        self.graph.add((event_i, self.has_type, self.event_ald))
+        self.graph.add((event_i,  RDF.type, self.event_ald))
         self.graph.add((event_i, self.hasLabel, self.ALDCODE[evt.evenType.label]))
 
         self.indexEvent = self.indexEvent + 1
@@ -96,9 +95,9 @@ class FactoryRDF:
         event_i = patient + "EVT" + str(self.indexEvent)
         self.__addEvent(evt, patient, event_i)
         
-        self.graph.add((event_i, self.has_type, self.event_drug_delivery))
+        self.graph.add((event_i, RDF.type, self.event_drug_delivery))
         self.graph.add((event_i, self.hasLabel, self.ATC[evt.evenType.label]))
-        self.graph.add((self.ATC[evt.evenType.label], self.SNDS['quantity'], Literal(evt.evenType.quantity)))
+        self.graph.add((event_i, self.SNDS['quantity'], Literal(evt.evenType.quantity)))
 
         self.graph.add((event_i, self.executor, self.PHARMACY[evt.executer.label]))
 
@@ -112,7 +111,7 @@ class FactoryRDF:
         event_i = patient + "EVT" + str(self.indexEvent)
         self.__addEvent(evt, patient, event_i)
         
-        self.graph.add((event_i, self.has_type, self.event_consultation))
+        self.graph.add((event_i,  RDF.type, self.event_consultation))
         self.graph.add((event_i, self.hasLabel, self.IRNAT[evt.evenType.label]))
 
         self.graph.add((event_i, self.executor, self.DOCTOR[evt.executer.label]))
@@ -128,7 +127,7 @@ class FactoryRDF:
         event_i = patient + "EVT" + str(self.indexEvent)
         self.__addEvent(evt, patient, event_i)
         
-        self.graph.add((event_i, self.has_type, self.event_acte))
+        self.graph.add((event_i, RDF.type, self.event_acte))
         self.graph.add((event_i, self.hasLabel, self.CCAM[evt.evenType.label]))
 
         self.graph.add((event_i, self.executor, self.DOCTOR[evt.executer.label]))
@@ -144,7 +143,7 @@ class FactoryRDF:
         event_i = patient + "EVT" + str(self.indexEvent)
         self.__addEvent(evt, patient, event_i)
         
-        self.graph.add((event_i, self.has_type, self.event_hospitalisation))
+        self.graph.add((event_i, RDF.type, self.event_hospitalisation))
         self.graph.add((event_i, self.hasLabel, self.CCAM[evt.evenType.label]))
         self.graph.add((self.CIM10[evt.evenType.label], self.SNDS['diagnosis'], Literal(evt.evenType.diagnosis)))
 
@@ -160,7 +159,7 @@ class FactoryRDF:
         event_i = patient + "EVT" + str(self.indexEvent)
         self.__addEvent(evt, patient, event_i)
         
-        self.graph.add((event_i, self.has_type, self.event_biology))
+        self.graph.add((event_i, RDF.type, self.event_biology))
         self.graph.add((event_i, self.hasLabel, self.UNCAM[evt.evenType.label]))
 
         self.graph.add((event_i, self.executor, self.DOCTOR[evt.executer.label]))
