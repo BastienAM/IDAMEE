@@ -169,12 +169,12 @@ class FactoryRDF:
 
 
     def addSequence(self, sequence):
-        patient = self.SNDS[sequence.refSequence]
-        self.graph.add((patient, RDF.type, patient))
-        self.graph.add((patient, self.gender, Literal(sequence.gender)))
-        self.graph.add((patient, self.location_code, Literal(sequence.localisation, datatype = XSD['string'])))
-        self.graph.add((patient, self.date_of_birth, Literal(sequence.dateofBirth, datatype = XSD['date'])))
-        self.graph.add((patient, self.date_of_death, Literal(sequence.dateofDeath, datatype = XSD['date'])))
+        patient_i = self.SNDS[sequence.refSequence]
+        self.graph.add((patient_i, RDF.type, self.patient))
+        self.graph.add((patient_i, self.gender, Literal(sequence.gender)))
+        self.graph.add((patient_i, self.location_code, Literal(sequence.localisation, datatype = XSD['string'])))
+        self.graph.add((patient_i, self.date_of_birth, Literal(sequence.dateofBirth, datatype = XSD['date'])))
+        self.graph.add((patient_i, self.date_of_death, Literal(sequence.dateofDeath, datatype = XSD['date'])))
 
     def deleteTempFiles(self):
         for f in os.listdir(self.name):
