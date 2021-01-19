@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="expires" content="0">
+</head>
+<body>
+    <div class="container">
+        <h1>Chronicle editor</h1>
+        <section id="app">
+            <div id="app-body">
+                <div class="panel tab-content">
+                    <div id="edit-pane" class="tab-pane active">
+                        <div class="alert alert-secondary form-group">
+                            <div class="form-control selected-node-id">No item selected</div>
+                            <input class="form-control nodelabel form-control" type="text" style="display:none;" id="nodelabel" name="nodelabel" value="" /><br>
+                            <button class="form-control btn btn btn-primary inactive" onclick="setLabelForSelectedNode()" id="nodelabelbtn">Save</button>
+                            <input class="form-control translower" type="text" style="display:none;" id="translower" name="translower" value="" /><br>
+                            <input class=" form-control transupper" type="text" style="display:none;" id="transupper" name="transupper" value="" /><br>
+                            <button class="form-control btn btn btn-primary inactive" onclick="setBoundForSelectedLink()" id="transbtn">Save</button>
+                        </div>
+                        <div class="instructions tab-pane active">
+                            <ul class="label">
+                                <li>Click in the open space to <strong>add a state</strong></li>
+                                <li>Drag between states to <strong>add a transition</strong></li>
+                                <li>Ctrl-drag a state to <strong>move</strong> graph layout</li>
+                                <li>Click a state or a transition to <strong>select</strong> it</li>
+                                <li>
+                                When a state is selected:
+                                    <ul>
+                                        <li>change label on left panel (require to validate)</li>
+                                        <li><strong>Delete</strong> removes the state</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    When a transition is selected:
+                                    <ul>
+                                        <li>change temporal constraints on left panel (require to validate)</li>
+                                        <li><strong>Delete</strong> removes the transition</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="graph"></div>
+                <div class="current-formula inactive"></div>
+            </div>
+        </section><br/>
+        <div class="form-group" container-fluid>
+            <div class="row">
+                <div class="col">
+                    <form action="search" method= "post" width="90%" id="searchform">
+                        <textarea class="form-control" id="chronicle" name="search" type="search" rows="4" cols="50" required></textarea><br>
+                        <button type="submit" class="form-control btn btn-primary" onclick=" var val = document.getElementById('search').value;}">Search</button>
+                    </form>
+                </div>   
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <input type="button" class="form-control btn btn-primary  " onclick="loadChronicle()" value="Load"/>
+                </div>
+                <div class="col">
+                    <input type="button" class="form-control btn btn-primary" onclick="clearChronicle()" value="Clear"/>
+                </div>
+                <div class="col">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
