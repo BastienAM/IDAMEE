@@ -7,9 +7,11 @@ import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
 
-from IHM.timeline import createTimeline
+from IHM.FactoryTimeline import FactoryTimeline
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+timeline = FactoryTimeline(app, FactoryTimeline.df)
 
 app.layout = html.Div(
     dbc.Container(
@@ -19,7 +21,7 @@ app.layout = html.Div(
                 dbc.Col(html.Div("One of two columns"), md=6),
 
                 #Info patient + time line ici
-                dbc.Col(createTimeline(app), md=6)
+                dbc.Col(timeline.createIHM(), md=6, id='div-timeline')
             ]
         ),
         fluid = True
