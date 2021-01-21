@@ -102,3 +102,15 @@ class FactoryTimeline:
             shift += 0.01
 
         return fig
+
+def convertToDataFrame(array):
+    values = []
+    chroniqueIdx = 1
+    for row in array:
+        eventIdx = 1
+        for chronique in row:
+            values.append(dict(Event="e"+str(eventIdx), Start= chronique[1]+'00:00', Finish=chronique[1]+'23:59', Group=chroniqueIdx))
+            eventIdx += 1
+        chroniqueIdx += 1
+
+    return pd.DataFrame(values)
