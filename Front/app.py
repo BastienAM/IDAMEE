@@ -23,7 +23,7 @@ def index():
 @app.route('/search',  methods=['post'])
 def search():
     if request.method == 'POST' :
-        search=''
+        search='[]'
         try:
            search = json.loads(request.form['search'])
         except ValueError:  # includes simplejson.decoder.JSONDecodeError
@@ -50,9 +50,7 @@ def search():
                 listResults.append(result)
         except:
             print("Erreur déclenchée")
-        return render_template('index.html', items = listResults)
-    return render_template('index.html', items = [])
+    return render_template('index.html', items = listResults, chronicle = request.form['search'] )
 
 if __name__ == '__main__':
-    app.run(debug=False)
-    app.run()
+    app.run(debug=True)

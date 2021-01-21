@@ -16,8 +16,8 @@ var lastNodeId = -1,
     links = [];
 
 // set up SVG for D3
-var width  = 440,
-    height = 740,
+var width  = 400,
+    height = 530,
     colors = d3.scale.category10();
 
 var svg = d3.select('#app-body .graph')
