@@ -13,12 +13,12 @@ class FactoryTimeline:
 
     df = pd.DataFrame([
         dict(Event="e1", Start='2021-01-01 00:00', Finish='2021-01-01 23:59', Group=1),
-        dict(Event="e1", Start='2021-01-03', Finish='2021-01-04', Group=2),
-        dict(Event="e1", Start='2021-01-05', Finish='2021-01-06', Group=1),
-        dict(Event="e2", Start='2021-01-03', Finish='2021-01-04', Group=2),
-        dict(Event="e2", Start='2021-01-04', Finish='2021-01-05', Group=3),
-        dict(Event="e3", Start='2021-01-04', Finish='2021-01-08', Group=1),
-        dict(Event="e3", Start='2021-01-04', Finish='2021-01-08', Group=2),
+        dict(Event="e1", Start='2021-01-03', Finish='2021-01-03 23:59', Group=1),
+        dict(Event="e1", Start='2021-01-05', Finish='2021-01-05 23:59', Group=2),
+        dict(Event="e2", Start='2021-01-03', Finish='2021-01-03 23:59', Group=2),
+        dict(Event="e2", Start='2021-01-04', Finish='2021-01-04 23:59', Group=1),
+        dict(Event="e3", Start='2021-01-04', Finish='2021-01-04 23:59', Group=1),
+        dict(Event="e3", Start='2021-01-04', Finish='2021-01-04 23:59', Group=2),
     ])
 
 
@@ -96,7 +96,7 @@ class FactoryTimeline:
                 y0 = 0 + shift, 
                 x1 = maxDate, 
                 y1 = 0.99 + shift,
-                line = dict(color = px.colors.qualitative.Plotly[val-1 % 10]),
+                line = dict(color = px.colors.qualitative.Set3[val-1 % 10]),
             )
 
             shift += 0.01
