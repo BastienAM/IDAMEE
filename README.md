@@ -6,6 +6,8 @@ you need to install the following libraries with the command `pip install xxx` :
 * sqlalchemy
 * sqlite3
 * bsddb3 ([help for windows user](https://stackoverflow.com/questions/33714698/installing-bsddb3-6-1-1-in-windows-filenotfounderror-db-include-db-h))
+* Dash
+* dash-bootstrap-components
 
 ## Run generateIrNat
 For run the script, you must enter the name of the database file on argument.  
@@ -48,3 +50,8 @@ Run the command in the next repertory `apache-jena-fuseki-3.16.0/` :
 `fuseki-server --loc=databaseTDB /data`
 
 You must give the right path to access `databaseTDB` folder create before.
+
+## Run IHM
+
+For run the IHM, you must run Apache Jena Fuseki before.  
+Example : `python server.py`
