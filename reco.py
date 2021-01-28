@@ -149,12 +149,12 @@ class ChronicleReco:
                 if not type(eiej) is tuple:
                     del self.tconst[eiej]
                     print("error: constraint ", eiej, " must be a tuple => ignored")
-                    break;
+                    break
 
                 if len(eiej) != 2:
                     del self.tconst[eiej]
                     print("error: constraint ", eiej, " must have 2 values => ignored ")
-                    break;
+                    break
 
     def convert_dates_to_integers(self, sequence):
         new_seq = {}
@@ -235,7 +235,7 @@ class ChronicleReco:
                     if ejless <= ejup:
                         occ[ej] = {0: (ejless, ejup)}
                     else:
-                        break;
+                        break
 
                 elif 1 in self.tconst[eiej]:  # check if negative edge
                     titj = self.tconst[eiej][1]
@@ -253,7 +253,7 @@ class ChronicleReco:
                         tmin = date + titj[0]
                         tmax = date + titj[1]
                     if (tmin > tmax) or (tmax > dmax) or (tmin < 0):  # check if interval is valid
-                        break;
+                        break
                     else:
                         interval1 = set(range(tmin, tmax + 1))
                         try:
@@ -264,7 +264,7 @@ class ChronicleReco:
                         if not dates_ck:
                             occ[ej] = {1: (tmin, tmax)}
                         else:
-                            break;
+                            break
                 cpt += 1
             if cpt == len(futur_tconst):  # all the const have been verified
                 new_occs.append(occ)

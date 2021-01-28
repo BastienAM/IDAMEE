@@ -65,7 +65,7 @@ class FactoryTimeline:
             Input("dropdown-input", "value"),
             prevent_initial_call = True
         )
-        def updateTimeline( switches_value):
+        def updateTimeline(switches_value):
             if(len(switches_value) > 0):
                 dfFilter = self.dataFrame[self.dataFrame['Group'].isin(switches_value)]
                 return self.__createTimeline(dfFilter)
@@ -76,7 +76,7 @@ class FactoryTimeline:
 
     def __createTimeline(self, dataFrame):
 
-        fig = px.timeline(dataFrame, x_start="Start", x_end="Finish", y="Event", color = "Event", hover_data=dict(Event=False, Start=False, Finish=False, Group=False))
+        fig = px.timeline(dataFrame, x_start="Start", x_end="Finish", y="Event", color = "Event", hover_data=dict(Event=False, Start=False, Finish=False, Group=False, Value= True))
         fig.update_yaxes(autorange="reversed") # otherwise tasks are listed from the bottom up
         fig.update_traces(xperiodalignment="middle", xperiod=86400000.0)
         fig.update_xaxes(rangeslider_visible=True, ticklabelmode="period", showgrid=True, dtick=86400000.0, type="date")
@@ -106,10 +106,10 @@ class FactoryTimeline:
 def convertToDataFrame(array):
     values = []
     chroniqueIdx = 1
-    for row in array:
+    for row in array['occs']:
         eventIdx = 1
-        for chronique in row:
-            values.append(dict(Event="e"+str(eventIdx), Start= chronique[1]+'00:00', Finish=chronique[1]+'23:59', Group=chroniqueIdx))
+        for code, date in row:
+            values.append(dict(Event="e"+str(eventIdx), Start= str(date)+' 00:00', Finish=str(date)+' 23:59', Group=chroniqueIdx, Value = code))
             eventIdx += 1
         chroniqueIdx += 1
 
